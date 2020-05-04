@@ -9,6 +9,7 @@ The activate the virtual environment
 
 '''sh
 pipenv install
+pipenv shell
 '''
 
 ## Usage 
