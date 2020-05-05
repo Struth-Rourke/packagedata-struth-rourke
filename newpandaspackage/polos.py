@@ -18,7 +18,7 @@ class Polo():
         print(f'WASHING {self.size} {self.color} POLO!')
 
     @staticmethod # Doesn't require self 
-    def fold(self):
+    def fold():
         print('FOLDING')
 
 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     p1 = Polo(size = 'Small', color = 'Blue')
     print(p1.size, p1.color)
-    print(p1.full_name)
+    print(p1.full_name) # Decorator property
     p1.wash()
 
 
