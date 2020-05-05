@@ -7,14 +7,14 @@ Fork this repo, then download your own copy of it. the navigate into this direct
 The activate the virtual environment
 
 
-'''sh
+```sh
 pip install _________
-'''
+```
 
 ## Usage 
-'''py
+```py
 from newpandaspackage.my_mod import enlarge
 
 print(enlarge(2))
-'''
+```
 

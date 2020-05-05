@@ -6,10 +6,10 @@ Fork this repo, then download your own copy of it. the navigate into this direct
 The activate the virtual environment
 
 
-'''sh
+```sh
 pipenv install
 pipenv shell
-'''
+```
 
 ## Usage 
 TODO
