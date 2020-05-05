@@ -24,6 +24,7 @@ def train_val_test_func(df):
     return train, val, test
 
 
+
 # date_splitting Function
 def date_splitting(Y):
     ''' Takes a column with dates and creates three new columns with different
@@ -43,10 +44,11 @@ def date_splitting(Y):
     return print(Y)
 
 
+
 # add_state_names Function
-def add_state_names(my_df):
-    ''' Converts a dataframe with a column of state abbreviations,
-    adding a corresponding column of state names
+def add_state_names(lst):
+    ''' Converts a list with a column of state abbreviations,
+    adding a corresponding column of state names.
 
     Params:
         my_df a pandas.DataFrame with a column called "abbrev".
@@ -61,19 +63,31 @@ def add_state_names(my_df):
     # FL -> Florida
 
     # Creating a copy
-    new_frame = my_df.copy()
+    lst_copy = lst.copy()
 
     # need a list of dict with the abbrev/name mappings
-    names_map = {'CA': 'Cali', 'CO': 'Colo', 'CT': 'Conn', 'DC': 'District of Columbia'}
+    names_map = {'CA': 'Cali', 'CO': 'Colo', 'CT': 'Connecticut', 
+                 'DC': 'District of Columbia', 'NY': 'New York', 
+                 'NJ': 'New Jersey', 'VT': 'Vermont', 'TX': 'Texas', 
+                 'RI': 'Rhode Island'}
         
     # create a new column which maps the existing column using our names map
     # breakpoint() ## Allows us to enter the script and adjust the things above it in the code
     # type(type(new_frame['abbrev'])) -> Series
     # Can use 'Dir(new_frame['abbrev'])' to see what functions/methods you can call on the particle datatype you're using
 
-    new_frame['name'] = new_frame['abbrev'].map(names_map)
+    lst_copy = map(lambda x: names_map[x], lst_copy)
 
-    return new_frame
+    return list(lst_copy)
+
+## Function 3 (add_state_names)
+# Mock list
+dfz = ['CA', 'CO', 'CT', 'DC', 'TX']
+
+# Calling and assigning function
+dfz2 = add_state_names(dfz)
+print(dfz2)
+
 
 
 # list_series_df_col Function
@@ -92,3 +106,33 @@ def list_series_df_col(lst, col_header):
     return df
 
 
+# Creating a new class
+class StateWrangle():
+    ''' 
+    Params:
+    '''
+    def __init__(self, lst1, lst2, col_headers):
+        self.lst1 = lst1
+        self.lst2 = lst2
+        self.col_headers = col_headers
+
+    def add_state_names(self):
+      self.lst3 = add_state_names(self.lst1)
+      # breakpoint() -> code check
+      return self.lst3
+
+    def list_series_df_col(self):
+      dictionary = dict(zip(self.col_headers, [self.lst1, self.lst2, self.lst3]))
+      # breakpoint() -> code check
+      df = pd.DataFrame(dictionary)
+      return df
+        
+
+lst1 = ['NY', 'NJ', 'CT', 'RI', 'VT']
+lst2 = [1, 2, 3, 4, 5]
+headers = ['Ab', 'Number', 'Name']
+    
+x = StateWrangle(lst1, lst2, headers)
+print(x.lst1)
+print(x.add_state_names())
+print(x.list_series_df_col())
