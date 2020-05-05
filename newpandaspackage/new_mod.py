@@ -24,8 +24,6 @@ if __name__ == "__main__":
         # Returning the df's
         return train, val, test
 
-
-if __name__ == "__main__":
     # Date Splitting Function
     def date_splitting(Y):
         ''' Takes a column with dates and creates three new columns with different
