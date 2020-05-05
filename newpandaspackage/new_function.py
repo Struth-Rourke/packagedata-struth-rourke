@@ -1,14 +1,15 @@
 from pandas import DataFrame
 
+
 # Defining the function
 def add_state_names(my_df):
     ''' Converts a dataframe with a column of state abbreviations,
     adding a corresponding column of state names
 
-    Params: 
+    Params:
         my_df a pandas.DataFrame with a column called "abbrev".
-        
-        Example: 
+
+        Example:
         add_state_names(DataFrame({'abbrev': ['CA', 'CO', 'CT', 'DC', 'TX']}))
 
     Returns: a pandas.DataFrame with the original col as well as a name column
@@ -17,7 +18,7 @@ def add_state_names(my_df):
     # State Abbreviation -> Full name and Vice Versa
     # FL -> Florida
 
-    # Creating a copy 
+    # Creating a copy
     new_frame = my_df.copy()
 
     # need a list of dict with the abbrev/name mappings
