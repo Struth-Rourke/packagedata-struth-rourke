@@ -78,9 +78,12 @@ def add_state_names(lst):
 
     lst_copy = map(lambda x: names_map[x], lst_copy)
 
+    # def function(lst):
+        # return list(names_map[lst])
+    
+    # lst_copy = function(lst_copy)
+
     return list(lst_copy)
-
-
 
 # list_series_df_col Function
 def list_series_df_col(lst, col_header):
