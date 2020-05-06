@@ -72,7 +72,7 @@ def add_state_names(lst):
                  'RI': 'Rhode Island'}
         
     # create a new column which maps the existing column using our names map
-    # breakpoint() ## Allows us to enter the script and adjust the things above it in the code
+    # *** breakpoint() ***
     # type(type(new_frame['abbrev'])) -> Series
     # Can use 'Dir(new_frame['abbrev'])' to see what functions/methods you can call on the particle datatype you're using
 
@@ -142,11 +142,3 @@ class StateWrangle():
         return df
         
 
-lst1 = ['NY', 'NJ', 'CT', 'RI', 'VT']
-lst2 = [1, 2, 3, 4, 5]
-headers = ['Ab', 'Number', 'Name']
-    
-x = StateWrangle(lst1, lst2, headers)
-print(x.lst1)
-print(x.add_state_names())
-print(x.list_series_df_col())
