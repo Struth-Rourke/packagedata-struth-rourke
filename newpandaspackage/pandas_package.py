@@ -27,7 +27,7 @@ print(dfz)
 
 # Calling and assigning function
 dfz2 = add_state_names(dfz)
-print(dfz2.head())
+print(dfz2)
 
 
 

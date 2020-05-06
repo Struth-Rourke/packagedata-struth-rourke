@@ -80,14 +80,6 @@ def add_state_names(lst):
 
     return list(lst_copy)
 
-## Function 3 (add_state_names)
-# Mock list
-dfz = ['CA', 'CO', 'CT', 'DC', 'TX']
-
-# Calling and assigning function
-dfz2 = add_state_names(dfz)
-print(dfz2)
-
 
 
 # list_series_df_col Function
@@ -109,23 +101,45 @@ def list_series_df_col(lst, col_header):
 # Creating a new class
 class StateWrangle():
     ''' 
+    Takes in two lists, and a list of column headers, 
+    and creates a new list from them; then afterwards 
+    converts all the lists into a DataFrame 
+    
     Params:
+        lst1 = list of strings
+        lst2 = list of strings / integers 
+        col_headers = list of columns
+
+    Returns: 
+        A DataFrame with the two originals lists, 
+        and a third created list from one of the functions / methods
+        inside this class.
     '''
+    
+    # Intiating and creating attributes that need to be fed into the class
     def __init__(self, lst1, lst2, col_headers):
+        # Instantiating the attributes so they can be returned
         self.lst1 = lst1
         self.lst2 = lst2
         self.col_headers = col_headers
 
+    # Defining the function 
     def add_state_names(self):
-      self.lst3 = add_state_names(self.lst1)
-      # breakpoint() -> code check
-      return self.lst3
+        # Creating a new list from the first list in the class
+        self.lst3 = add_state_names(self.lst1)
+        # breakpoint() -> code check
+        #returns the newly created list
+        return self.lst3
 
+    # Defining the function that turns a list into a series then into a DataFrame
     def list_series_df_col(self):
-      dictionary = dict(zip(self.col_headers, [self.lst1, self.lst2, self.lst3]))
-      # breakpoint() -> code check
-      df = pd.DataFrame(dictionary)
-      return df
+        # Creating a dictionary with the zipped lists and column header attributes
+        dictionary = dict(zip(self.col_headers, [self.lst1, self.lst2, self.lst3]))
+        # breakpoint() -> code check
+        # Creating a DataFrame from the attributes
+        df = pd.DataFrame(dictionary)
+        # Returning the DataFrame
+        return df
         
 
 lst1 = ['NY', 'NJ', 'CT', 'RI', 'VT']
