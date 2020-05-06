@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="newpackage-struth-rourke", # the name that you will install via pip
-    version="1.2",
+    version="1.5",
     author="Rourke Struthers",
     author_email="struthers.rourke@gmail.com",
     description="New custom pandas package",
