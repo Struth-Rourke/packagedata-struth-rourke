@@ -1,5 +1,5 @@
 import pandas as pd
-from newpandaspackage.new_mod import train_val_test_func, date_splitting, add_state_names, list_series_df_col
+from newpandaspackage.new_mod import train_val_test_func, date_splitting, add_state_names, list_series_df_col, StateWrangle
 
 
 ## Function 1 (train_val_test_func)
