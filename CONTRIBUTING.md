@@ -12,4 +12,11 @@ pipenv shell
 ```
 
 ## Usage 
-TODO
+```sh
+python -m newpandaspackage.
+python -m newpandaspackage.
+
+
+## Testing
+```sh
+python -m test.test_my_mod
