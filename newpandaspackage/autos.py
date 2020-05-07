@@ -1,7 +1,7 @@
 # autos.py
 
 class Auto():
-    ''' 
+    '''
     Params:
         make str
         model str
@@ -10,6 +10,7 @@ class Auto():
         num_wheels int
         bed_size str
     '''
+
     def __init__(self, make, model, year, color, num_wheels):
         self.make = make
         self.model = model
@@ -23,14 +24,18 @@ class Auto():
     def advertise(self):
         print("BUY OUR", self.model)
 
-class Truck(Auto): # designates the Truck class should inherit from the Auto class
+
+# designates the Truck class should inherit from the Auto class
+class Truck(Auto):  
     def __init__(self, make, model, year, color, num_wheels, bed_size):
-        super().__init__(make, model, year, color, num_wheels) # can invoke parent class methods via super()
+        # can invoke parent class methods via super()
+        super().__init__(make, model, year, color, num_wheels)
         self.bed_size = bed_size
 
     # can overwrite parent class methods
     def advertise(self):
         print("VROOOOM", self.model)
+
 
 if __name__ == "__main__":
 

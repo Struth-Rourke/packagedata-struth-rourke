@@ -3,7 +3,7 @@ import unittest
 # Importing the necessary packages
 from newpandaspackage.new_function import WrangledFrame
 
-class TestWrangledFrame(unittest.TestCase):
+class TestStateWrangled(unittest.TestCase):
 
     def test_add_state_names(self):
         wf = WrangledFrame({'abbrev': ['CA', 'CO', 'CT', 'DC', 'TX']})

@@ -1,5 +1,6 @@
 # Creating a function
 
+
 def enlarge(n):
     return int(n) * 10
 
