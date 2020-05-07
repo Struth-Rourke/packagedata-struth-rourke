@@ -16,6 +16,6 @@ setup(
     license="MIT",
     url="https://github.com/Struth-Rourke/packagedata-struth-rourke",
     #keywords="",
-    packages=find_packages() # ["newpandaspackage"]
+    packages=["newpandaspackage"] #find_packages() # ["newpandaspackage"] ## OR remove __init__ file
 )
 
